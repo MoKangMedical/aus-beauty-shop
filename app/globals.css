@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-serif: "Times New Roman", Georgia, serif;
+  --color-cream: #faf8f5;
+  --color-warm: #f5f0eb;
+  --color-stone: #e8e4df;
+  --color-charcoal: #2d2a26;
+  --color-ink: #1a1816;
+  --color-muted: #8a8580;
+  --color-accent: #b8956a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { box-sizing: border-box; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+html { scroll-behavior: smooth; }
+
+::selection {
+  background: var(--color-warm);
+  color: var(--color-ink);
+}
+
+/* === BUTTONS === */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2.25rem;
+  background: var(--color-ink);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary:hover {
+  background: var(--color-charcoal);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2.25rem;
+  border: 1px solid var(--color-stone);
+  background: transparent;
+  color: var(--color-ink);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.btn-outline:hover {
+  border-color: var(--color-ink);
+}
+
+/* === IMAGE HOVER === */
+.img-hover {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.img-hover:hover {
+  transform: scale(1.03);
+}
+
+/* === LINE CLAMP === */
+.line-clamp-1 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
+.line-clamp-2 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+
+/* === PROSE FOR ABOUT/CONTENT PAGES === */
+.prose-custom p {
+  margin-bottom: 1.25rem;
 }

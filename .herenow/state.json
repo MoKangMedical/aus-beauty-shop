@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "quiet-sonnet-nd3z": {
+      "siteUrl": "https://quiet-sonnet-nd3z.here.now/",
+      "claimToken": "baea6edf79ff6bf4381e195a7ccc4443aac1b271751d8dd6e7fb8c43ccea6fe7",
+      "claimUrl": "https://here.now/claim?slug=quiet-sonnet-nd3z&token=baea6edf79ff6bf4381e195a7ccc4443aac1b271751d8dd6e7fb8c43ccea6fe7",
+      "expiresAt": "2026-07-05T14:49:21.757Z"
+    }
+  }
+}
